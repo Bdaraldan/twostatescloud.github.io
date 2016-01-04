@@ -4,7 +4,7 @@
     .no-pag:hover {color: #acacac;}
     #fullTableFilter {border: none; border-bottom: 1px solid #333;margin: 10px 0px; width: 90%; font-size: 16px; padding-bottom: 6px;}
     .tHeader {padding: 2px; cursor: pointer; text-align: center;}
-    .photo {display: inline-block; float: left; width: 50px; height: auto}
+    .photo {display: inline-block; float: left; width: 50px; max-height: 75px;}
     #photogrid {overflow: auto;}
 	.container {margin: 0 auto; overflow: auto; padding-top:225px;}
 	h3 {padding-top: 18px;}
@@ -13,7 +13,7 @@
 	table {border-spacing: 0;}
 	tbody tr:nth-child(odd) {background-color: #f3f3f3;}
 	thead {text-align: center; font-family: Source Sans Pro, Arial, sans-serif;}
-	td {min-width: 40px; width: 200px; vertical-align: middle; text-align: center; padding: 4px;}
+	td {min-width: 40px; width: 200px; vertical-align: middle; text-align: center; padding: 4px; height: 75px; max-height: 75px;}
 	td a {line-height: 24px;}
 	tr {height: 50px;}
 	tr:hover td {

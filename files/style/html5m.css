@@ -41,7 +41,7 @@
     .no-pag:hover {color: #acacac;}
     #fullTableFilter {border: none; border-bottom: 1px solid #333; background:#FFFEE8; margin: 2px 0px; width: 98%; font-size: 16px; padding-bottom: 6px; padding-left:5px;}
     .tHeader {padding: 2px; cursor: pointer; text-align: left;}
-    .photo {display: inline-block; float: left; width: 30px; height: auto}
+    .photo {display: inline-block; float: left; width: 30px; max-height: 55px;}
     #photogrid {overflow: auto;}
 	.container2 {margin: 0 auto; overflow: auto; padding-top:195px; width:100%;}
 	h3 {padding-top: 18px;}
@@ -50,7 +50,7 @@
 	table {border-spacing: 0;}
 	tbody tr:nth-child(odd) {background-color: #f3f3f3;}
 	thead {text-align: left; font-family: Source Sans Pro, Arial, sans-serif;}
-	td {min-width: 10px; width: 100wh; vertical-align: top; padding: 4px;}
+	td {min-width: 10px; width: 100vh; vertical-align: top; padding: 4px;height: 55px; max-height: 55px;}
 	td a {line-height: 24px;}
 	tr {height: 50px;}
 	tr:hover td {
