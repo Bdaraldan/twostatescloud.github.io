@@ -2,7 +2,7 @@
 <html data-cast-api-enabled="true">
   <head>
     <meta charset='utf-8'>
-    <title>cCloud TV BETA V0.6 | Social IPTV Service for LIVE TV,Movies,TV Shows & Radio</title>
+    <title>cCloud TV BETA V0.7 | Social IPTV Service for LIVE TV,Movies,TV Shows & Radio</title>
 	<meta name="keywords" content="cCloud, TV, Popcorntime, Live TV, Simple IPTV, Free TV, Android, iOS, app, web,Roku, Amazon fire tv, Plex, Chromecast,Airplay,Cast,Cloud player">
 	<meta name="description" content="Official cCloud TV The Popcorntime for Live TV">
 	<meta name="mobile-web-app-capable" content="yes">
@@ -58,11 +58,11 @@
 				<span id="ch_summary">Not Playing</span><br/>
 			</div>
 			
-			<div style="padding-left:15px; padding-top:180px;"><input id="fullTableFilter" type="text" placeholder="search"></input></div>
+			<div style="padding-left:15px; padding-top:180px;"><input title="Use category::sports for Sports, language::spanish for Spanish.. (header::value)" id="fullTableFilter" type="text" placeholder="search"></input></div>
 		</div>
 		<div class="vlcframe">
 
-				<video id="example_video_1" class="video-js vjs-default-skin" width="533.5" height="300" controls preload="" poster="" data-setup='{"techOrder": ["html5"], "controls": true, "autoplay": true, "preload": "auto"}'>
+				<video id="example_video_1" class="video-js vjs-default-skin" width="533.5" height="300" controls preload="" poster="" data-setup='{"techOrder": ["html5"], "controls": true, "autoplay": false, "preload": "auto"}'>
 					<source src="https://archive.org/download/cCloud_20151126/cCloud.mp4" type='video/mp4' />
 					<p class="vjs-no-js">
 					To view this video please enable JavaScript, and consider upgrading to a web browser
@@ -103,6 +103,7 @@
   <table>
     <tr>
 		<th></th>
+		<th></th>
 		<th class="tHeader">Index</th>
 		<th class="tHeader">ChannelName</th>
 		<th class="tHeader">Category</th>
@@ -114,6 +115,7 @@
 	</tr>
       {{#rows}}
         <tr>
+                        <td><img src="{{fav1}}" title="{{fav2}}" onclick="{{fav3}}"></td>
 			<td onclick='javascript:playChNoFlash(""+"{{index}}");' href='#{{index}}'><a name="ch{{index}}"></a><img class="photo" title="{{channelname}}" src="{{channellogo}}" alt="Logo"></td>
 			<td onclick='javascript:playChNoFlash(""+"{{index}}");' href='#{{index}}'>{{index}}</td>
 			<td onclick='javascript:playChNoFlash(""+"{{index}}");' href='#{{index}}'>{{channelname}}</td>

@@ -36,6 +36,7 @@ videojs.options.flash.swf = "/files/video-js.swf";
 <script type="text/javascript">
 function userSubmit() {
    loadStream(document.getElementById('userInput').value);
+   document.getElementById("userInput").value = "";
 }
 function loadStream(url) {
 var $vid_obj = vjs("ccloudplayer");

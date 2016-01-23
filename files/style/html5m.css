@@ -10,7 +10,7 @@
 		width: 100%;
 		left: 0;
 		background: rgba(255, 254, 232, 0.9);
-		top: 35px;
+		top: 55px;
 		border-top: 1px #47CCFC solid;
 		border-left: 1px #47CCFC solid;
 		border-right: 1px #47CCFC solid;
@@ -50,7 +50,7 @@
 	table {border-spacing: 0;}
 	tbody tr:nth-child(odd) {background-color: #f3f3f3;}
 	thead {text-align: left; font-family: Source Sans Pro, Arial, sans-serif;}
-	td {min-width: 10px; width: 100vh; vertical-align: top; padding: 4px;height: 55px; max-height: 55px;}
+	td {min-width: 10px; width: 100vh; vertical-align: top; padding: 2px;height: 55px; max-height: 55px;}
 	td a {line-height: 24px;}
 	tr {height: 50px;}
 	tr:hover td {
@@ -141,7 +141,7 @@
 		border-left: 1px #47CCFC solid;
 		border-right: 1px #47CCFC solid;
 		//border-left: 1px #47CCFC solid;
-		height: 35px;
+		height: 55px;
 	}
 	
 	table {

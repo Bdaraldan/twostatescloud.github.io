@@ -5,6 +5,7 @@
 <meta name="keywords" content="cCloud, TV, Popcorntime, Live TV, Simple IPTV, Free TV, Android, iOS, app, web,Roku, Amazon fire tv, Plex, Chromecast,Airplay,Cast,Cloud player">
 <meta name="description" content="Official cCloud TV The Popcorntime for Live TV">
 <meta name="mobile-web-app-capable" content="yes">
+
 <link rel="icon" type="image/png" href="http://i.imgur.com/yX8CKx3.png">
 <link rel="apple-touch-icon" href="http://s13.postimg.org/f7c5mzrxf/i_OSlogo.png">
 <link rel="icon" sizes="192x192" href="http://s14.postimg.org/rkqqoq1cx/androidlogo.png">
@@ -12,15 +13,23 @@
 <meta name="referrer" content="no-referrer" />
 <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900,400italic|Source+Code+Pro:400' rel='stylesheet' type='text/css'>
-<link rel="shortcut icon" href="../../../favicon.png">
-<script type='text/javascript' src='/files/t.js'></script>
-<script type='text/javascript' src='/files/s.js'></script>
-<link href="/files/style/local.css" rel="stylesheet">
+<link rel="shortcut icon" href="/images/favicon.png">
+<script type='text/javascript' src='./files/t.js'></script>
+<script type='text/javascript' src='./files/s.js'></script>
+	<script>
+		function dim(bool)
+		{
+			if (typeof bool=='undefined') bool=true; // so you can shorten dim(true) to dim()
+			document.getElementById('dimmer').style.display=(bool?'block':'none');
+		} 
+	</script>
+	<link href="./files/style/local.css" rel="stylesheet">
+
 </head>
 <body>
 <div id="page">
 	<div class="topframe2">
-		<div style="float:left; width:50%;"><input title="Use category::sports for Sports, language::spanish for Spanish.. (header::value)" id="fullTableFilter" type="text" placeholder="search"></input></div>
+		<div style="float:left; width:50%;"><input id="fullTableFilter" type="text" placeholder="search"></input></div>
 		<div style="right:1px; border-right: 1px #47CCFC solid; position:absolute; width:50%;">
 				<span style="width:100%; float:right;"><span style="width:10%; padding-left:10px; padding-right:3px;">Adult ? <input type="checkbox" id="adultCheckbox" onclick="myFunctionAdult()"></span><span id="serverstats2" style="float:right; padding-right:12px; text-align: right;">Server Stats: </span></span>
 				<span style="width:100%; float:right; "><span style="float:right; padding-right:12px; text-align: right;">Time: <span id="time"></span></span></span>
@@ -36,33 +45,37 @@
     <tr>
 		<th></th>
 		<th></th>
-		<th class="tHeader">ChanneNamel</th>
+		<th class="tHeader">Index</th>
+		<th class="tHeader">ChannelName</th>
 		<th class="tHeader">Category</th>
-		<th class="tHeader">Status</th>
 		<th class="tHeader">Added</th>
+		<th class="tHeader">Language</th>
+		<th class="tHeader">Country</th>
+		<th class="tHeader">Status</th>
 		<th class="tHeader">VerifiedOn</th>
 	</tr>
       {{#rows}}
-		<tr>
-	         	<td>
-			<img src="{{fav1}}" title="{{fav2}}" onclick="{{fav3}}"></td>
-			<td onclick='javascript:playChNo(""+"{{index}}");' href='#{{index}}'><img class="photo" title="{{channelname}}" src="{{channellogo}}" alt="Logo"></td>
-			<td onclick='javascript:playChNo(""+"{{index}}");' href='#{{index}}'><a name="{{index}}"></a>{{index}} : {{channelname}} ({{language}}) ({{country}})</td>
-			<td onclick='javascript:playChNo(""+"{{index}}");' href='#{{index}}' style="background-color: {{categorycolor}};">{{category}}</td>
+        <tr>
+			<td><img class="photo" src="http://www.free-icons-download.net/images/alert-icon-50847.png" title="Report Issues with this Channel" onclick='javascript:report_issue(""+"{{index}}");'></td>
+			<td onclick='javascript:playChNoVLC(""+"{{index}}");' href='#{{index}}'><a name="ch{{index}}"></a><img class="photo" title="{{channelname}}" src="{{channellogo}}" alt="Logo"></td>
+			<td onclick='javascript:playChNoVLC(""+"{{index}}");' href='#{{index}}'>{{index}}</td>
+			<td onclick='javascript:playChNoVLC(""+"{{index}}");' href='#{{index}}'>{{channelname}}</td>
+			<td onclick='javascript:playChNoVLC(""+"{{index}}");' href='#{{index}}' style="background-color: {{categorycolor}};">{{category}}</td>
+			<td onclick='javascript:playChNoVLC(""+"{{index}}");' href='#{{index}}'>{{added}}</td>
+			<td onclick='javascript:playChNoVLC(""+"{{index}}");' href='#{{index}}'>{{language}}</td>
+			<td onclick='javascript:playChNoVLC(""+"{{index}}");' href='#{{index}}'>{{country}}</td>
 			<td><span style="padding: 2px 2px 2px 2px; background-color: {{statuscolor}}; cursor: {{statuscursor}};" onclick='javascript:submit(""+"{{index}}");' href='#{{index}}'>{{status}}</span></td>
-			<td onclick='javascript:verify(""+"{{index}}");' href='#{{index}}'>{{added}}</td>
 			<td onclick='javascript:verify(""+"{{index}}");' href='#{{index}}'><span style="cursor: cell;">{{verifiedon}}</span></td>
 		</tr>
       {{/rows}}
   </table>
 </script>
 
+<script src='./files/m.js'></script>
+<script src='./files/ga.js'></script>
 
 </div>
-</div>
-<script src='/files/m.js'></script>
-<script src='/files/ga.js'></script>
-</div>
+
 <div id="dimmer"></div>
 <div id="loading"></div>
 <div id="dataj"></div>
@@ -74,7 +87,7 @@
 		           		            <a href="/dmca" target="_blank">DMCA</a>
 		        		        </div>
 		    </nav>
-			<a href="/">©cCloud</a></p>
+		 <a href="/">©cCloud</a></p>
 
 	    </div>
 	</footer>

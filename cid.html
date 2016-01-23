@@ -5,6 +5,7 @@
 <meta name="keywords" content="cCloud, TV, Popcorntime, Live TV, Simple IPTV, Free TV, Android, iOS, app, web,Roku, Amazon fire tv, Plex, Chromecast,Airplay,Cast,Cloud player">
 <meta name="description" content="Official cCloud TV The Popcorntime for Live TV">
 <meta name="mobile-web-app-capable" content="yes">
+
 <link rel="icon" type="image/png" href="http://i.imgur.com/yX8CKx3.png">
 <link rel="apple-touch-icon" href="http://s13.postimg.org/f7c5mzrxf/i_OSlogo.png">
 <link rel="icon" sizes="192x192" href="http://s14.postimg.org/rkqqoq1cx/androidlogo.png">
@@ -13,8 +14,8 @@
 <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900,400italic|Source+Code+Pro:400' rel='stylesheet' type='text/css'>
 <link rel="shortcut icon" href="/images/favicon.png">
-<script type='text/javascript' src='/files/t.js'></script>
-<script type='text/javascript' src='/files/s.js'></script>
+<script type='text/javascript' src='./files/t.js'></script>
+<script type='text/javascript' src='./files/s.js'></script>
 	<script>
 		function dim(bool)
 		{
@@ -22,10 +23,8 @@
 			document.getElementById('dimmer').style.display=(bool?'block':'none');
 		} 
 	</script>
-	<link href="/files/style/vlc.css" rel="stylesheet">
-  <style>
-   
-  </style>
+	<link href="./files/style/vlc.css" rel="stylesheet">
+
 </head>
 <body>
 <div id="page">
@@ -38,7 +37,7 @@
 				<span id="ch_summary">Not Playing</span><br/>
 			</div>
 			
-			<div style="padding-left:15px; padding-top:180px;"><input title="Use category::sports for Sports, language::spanish for Spanish.. (header::value)" id="fullTableFilter" type="text" placeholder="search"></input></input></div>
+			<div style="padding-left:15px; padding-top:180px;"><input id="fullTableFilter" type="text" placeholder="search"></input></div>
 		</div>
 		<div class="vlcframe">
 			<object class="vlcplayer">
@@ -68,7 +67,7 @@
 <script id="fullTable_template" type="text/html">
   <table>
     <tr>
-                <th></th>
+		<th></th>
 		<th></th>
 		<th class="tHeader">Index</th>
 		<th class="tHeader">ChannelName</th>
@@ -81,7 +80,7 @@
 	</tr>
       {{#rows}}
         <tr>
-                        <td><img src="{{fav1}}" title="{{fav2}}" onclick="{{fav3}}"></td>
+			<td><img src="http://www.free-icons-download.net/images/alert-icon-50847.png" title="Report Issues with this Channel" onclick='javascript:report_issue(""+"{{index}}");'></td>
 			<td onclick='javascript:playChNoVLC(""+"{{index}}");' href='#{{index}}'><a name="ch{{index}}"></a><img class="photo" title="{{channelname}}" src="{{channellogo}}" alt="Logo"></td>
 			<td onclick='javascript:playChNoVLC(""+"{{index}}");' href='#{{index}}'>{{index}}</td>
 			<td onclick='javascript:playChNoVLC(""+"{{index}}");' href='#{{index}}'>{{channelname}}</td>
@@ -96,8 +95,8 @@
   </table>
 </script>
 
-<script src='/files/m.js'></script>
-<script src='/files/ga.js'></script>
+<script src='./files/m.js'></script>
+<script src='./files/ga.js'></script>
 
 </div>
 

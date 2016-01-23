@@ -25238,6 +25238,8 @@ function searchTable(opts, searchTerm) {
 			stringObject = JSON.stringify(object.added);
 		} else if (searchTerm[0].toLowerCase() == "status") {
 			stringObject = JSON.stringify(object.status);
+		} else if (searchTerm[0].toLowerCase() == "scode") {
+			stringObject = JSON.stringify(object.scode);
 		}
 		if (stringObject.toLowerCase().match(searchTerm[1].toLowerCase())) {
 			filteredList.push(object);

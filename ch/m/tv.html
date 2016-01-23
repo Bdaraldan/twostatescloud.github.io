@@ -2,7 +2,7 @@
 <html data-cast-api-enabled="true">
   <head>
     <meta charset='utf-8'>
-    <title>cCloud TV BETA V0.6 | Social IPTV Service for LIVE TV,Movies,TV Shows & Radio</title>
+    <title>cCloud TV BETA V0.7 | Social IPTV Service for LIVE TV,Movies,TV Shows & Radio</title>
 	<meta name="keywords" content="cCloud, TV, Popcorntime, Live TV, Simple IPTV, Free TV, Android, iOS, app, web,Roku, Amazon fire tv, Plex, Chromecast,Airplay,Cast,Cloud player">
 	<meta name="description" content="Official cCloud TV The Popcorntime for Live TV">
 	<meta name="mobile-web-app-capable" content="yes">
@@ -52,7 +52,7 @@
 <div id="page">
 	<div class="topframe">
 		<div class="vlcframe">
-				<video id="example_video_1" class="video-js vjs-default-skin" width="310" height="175" controls preload="" poster="" data-setup='{"techOrder": ["html5"], "controls": true, "autoplay": true, "preload": "auto"}'>
+				<video id="example_video_1" class="video-js vjs-default-skin" width="310" height="175" controls preload="" poster="" data-setup='{"techOrder": ["html5"], "controls": true, "autoplay": false, "preload": "auto"}'>
 					<source src="https://archive.org/download/cCloud_20151126/cCloud.mp4" type='video/mp4' />
 					<p class="vjs-no-js">
 					To view this video please enable JavaScript, and consider upgrading to a web browser
@@ -77,7 +77,7 @@
 		</div>
 	</div>
 	<div class="topframe2">
-		<div style="float:left; width:50%;"><input id="fullTableFilter" type="text" placeholder="search"></input></div>
+		<div style="float:left; width:50%;"><input title="Use category::sports for Sports, language::spanish for Spanish.. (header::value)" id="fullTableFilter" type="text" placeholder="search"></input></div>
 		<div style="right:1px; border-right: 1px #47CCFC solid; position:absolute; width:50%;">
 				<span style="width:100%; float:right;"><span style="padding-left:1px; padding-right:3px;">Adult ? <input type="checkbox" id="adultCheckbox" onclick="myFunctionAdult()"></span><span id="serverstats2" style="float:right; padding-right:1px; text-align: right;">Server Stats: </span></span>
 				<span style="width:100%; float:right; "><span style="float:right; padding-right:12px; text-align: right;">Time: <span id="time"></span></span></span>
@@ -92,6 +92,7 @@
   <table>
     <tr>
 		<th></th>
+		<th></th>
 		<th class="tHeader">ChannelName</th>
 		<th class="tHeader">Category</th>
 		<th class="tHeader">Status</th>
@@ -100,6 +101,7 @@
 	</tr>
       {{#rows}}
 		<tr>
+		        <td><img src="{{fav1}}" title="{{fav2}}" onclick="{{fav3}}"></td>
 			<td onclick='javascript:playChNoFlash(""+"{{index}}");' href='#{{index}}'><img class="photo" title="{{channelname}}" src="{{channellogo}}" alt="Logo"></td>
 			<td onclick='javascript:playChNoFlash(""+"{{index}}");' href='#{{index}}'><a name="{{index}}"></a>{{index}} : {{channelname}} ({{language}}) ({{country}})</td>
 			<td onclick='javascript:playChNoFlash(""+"{{index}}");' href='#{{index}}' style="background-color: {{categorycolor}};">{{category}}</td>
@@ -126,8 +128,8 @@
 		           		            <a href="/dmca" target="_blank">DMCA</a>
 		        		        </div>
 		    </nav>
-			<p>©2014-2015<span style="color:#F3404F;"></span> <a href="/">cCloud</a></p>
-		    <p class="copyright">All rights reserved.</p>
+			<a href="/">©cCloud</a></p>
+		 
 		   
 	    </div>
 	</footer>
